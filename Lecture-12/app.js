@@ -4,7 +4,7 @@ const rootDir=require('./utils/pathutils')
 const express=require('express')
 const app=express()
 const userRouter=require('./routes/useRouter')//Export Router
-const Hostrouter=require('./routes/Hostrouter')//Export Router
+const {hostrouter}=require('./routes/Hostrouter')//Export Router
 app.use((req,res,next)=>{
   console.log(req.url,req.method)
   next()
@@ -12,7 +12,7 @@ app.use((req,res,next)=>{
 
 app.use(express.urlencoded())//parcel
 app.use(userRouter)//Export Router
-app.use("/host",Hostrouter)//Export Router /host for overall path sharing
+app.use("/host",hostrouter)//Export Router /host for overall path sharing
 app.use(express.static(path.join(rootDir,'public')))//To access css file
 
 app.use((req,res,next)=>{

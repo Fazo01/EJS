@@ -5,8 +5,12 @@ const {hostRouter}=require("./Routes/hostRouter")
 const useRouter=require("./Routes/useRouter")
 const rootDir=require("./util/pathUtil")
 
+app.set('view engine','ejs')
+app.set('views','views')
 app.use(express.urlencoded())
+
 app.use(express.static(path.join(rootDir,"public")))
+
 app.use((req,res,next)=>{
   console.log(req.method)
   next()

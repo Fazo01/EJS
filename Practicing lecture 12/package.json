@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind":"npx tailwindcss -i ./Views/input.css -o ./public/output.css --watch",
+    "tailwind": "npx tailwindcss -i ./Views/input.css -o ./public/output.css --watch",
     "start": "nodemon node app.js & npm run tailwind"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "autoprefixer": "^10.4.21",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",

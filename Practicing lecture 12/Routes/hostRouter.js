@@ -6,8 +6,13 @@ const path=require("path")
 hostRouter.get("/add-home",(req,res,next)=>{
   res.sendFile(path.join(rootDir,"Views","addhome.html"))
 })
+const registeredName=[]
+
 hostRouter.post("/add-home",(req,res,next)=>{
+  console.log("House name:",req.body,req.body.houseName)
+  registeredName.push(req.body)
   res.sendFile(path.join(rootDir,"Views","homeadd.html"))
 })
 
-module.exports=hostRouter
+exports.hostRouter=hostRouter
+exports.registeredName=registeredName

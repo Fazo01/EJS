@@ -5,7 +5,7 @@ const rootDir=require("../util/pathUtil")
 const {registeredName}=require("../Routes/hostRouter")
 useRouter.get("/",(req,res,next)=>{
   console.log(registeredName)
-  res.render('home')
+  res.render('home',{pageTitle:'Home',registeredName:registeredName})
 })
 
 module.exports=useRouter

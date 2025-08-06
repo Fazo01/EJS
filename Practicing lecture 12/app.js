@@ -19,7 +19,7 @@ app.use((req,res,next)=>{
 app.use(useRouter)
 app.use("/host",hostRouter)
 app.use((req,res,next)=>{
-  res.sendFile(path.join(rootDir,"Views","page_404.html"))
+  res.render('page_404',{pageTitle:'Error'})
 })
 
 const PORT=3000

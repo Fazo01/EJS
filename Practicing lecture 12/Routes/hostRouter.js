@@ -9,7 +9,7 @@ hostRouter.get("/add-home",(req,res,next)=>{
 const registeredName=[]
 
 hostRouter.post("/add-home",(req,res,next)=>{
-  console.log("House name:",req.body,req.body.houseName)
+  console.log("House name:",req.body)
   registeredName.push(req.body)
   res.render('homeadd',{pageTitle:'Home Added' ,currentPage:"home-added"})
 })
